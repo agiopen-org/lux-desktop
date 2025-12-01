@@ -24,7 +24,7 @@ const App: React.FC = () => {
   const [mode, setMode] = useState(Mode.Actor);
   const [showHistory, setShowHistory] = useState(false);
   const [currentInstruction, setCurrentInstruction] = useState('');
-  const instruction = state?.instruction ?? currentInstruction;
+  const instruction = state?.instruction || currentInstruction;
 
   useEffect(
     () =>

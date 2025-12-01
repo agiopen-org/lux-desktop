@@ -11,7 +11,7 @@ export const workflows: Workflow[] = [
     icon: null,
   },
   {
-    key: 'csv_appointment',
+    key: 'cvs_appointment',
     command: 'CVS Appointment',
     icon: null,
   },

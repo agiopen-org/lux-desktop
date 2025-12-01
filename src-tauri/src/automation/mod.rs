@@ -16,6 +16,10 @@ use tokio::sync::Mutex;
 
 pub use state::{AutomationState, AutomationStatus};
 
+const MODE_THINKER: &str = "thinker";
+const MODEL_ACTOR: &str = "lux-actor-1";
+const MODEL_THINKER: &str = "lux-thinker-1";
+
 pub struct Session {
   pub socket: Client,
   pub state: Arc<Mutex<state::AutomationState>>,
@@ -72,6 +76,12 @@ impl AutomationEngine {
       let state = state.clone();
       let instruction = instruction.clone();
       let mode = mode.clone();
+      let model: String = if mode == MODE_THINKER {
+        MODEL_THINKER
+      } else {
+        MODEL_ACTOR
+      }
+      .into();
       socket = socket.on("open", move |_, client| {
         event::on_open(
           app.clone(),
@@ -79,7 +89,7 @@ impl AutomationEngine {
           client,
           instruction.clone(),
           mode.clone(),
-          "".into(),
+          model.clone(),
           None,
         )
         .boxed()
