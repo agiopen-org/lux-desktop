@@ -21,7 +21,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ## Get Started
 Clone this repository:
 ```bash
-git clone https://github.com/agi-agent/lux-desktop.git
+git clone https://github.com/agiopen-org/lux-desktop.git
 ```
 
 Install dependencies with pnpm:
