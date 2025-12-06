@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation & API reference
+    url: https://developer.agiopen.org/docs/index
+    about: Check docs before filing an issue.
+

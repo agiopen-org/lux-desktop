@@ -1,0 +1,22 @@
+name: Question
+description: Ask a question about using Lux Desktop or connecting to OAGI server.
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: What do you need help with?
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Version details
+      description: Lux Desktop version and, if applicable, `oagi version`.
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Steps tried, expected behavior, and any logs or screenshots.
+
