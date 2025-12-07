@@ -25,7 +25,7 @@ pub async fn stop_session(app: AppHandle) -> Result<(), String> {
     .state::<Mutex<AutomationEngine>>()
     .lock()
     .await
-    .stop_session(app.clone())
+    .stop_session()
     .await
     .map_err(|err| format!("{err:?}"))
 }

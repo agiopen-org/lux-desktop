@@ -29,10 +29,7 @@ const modes = [
 
 const ModeSelector: React.FC<ModeSelectorProps> = ({ mode, onChange }) => {
   const [open, setOpen] = useState(false);
-  console.log("modes:", modes)
-  console.log("mode:", mode)
   const selectedMode = modes.find(m => m.id === mode)!;
-  console.log("selectedMode:", selectedMode)
 
   return (
     <div>

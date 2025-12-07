@@ -6,6 +6,7 @@ import { AutomationStatus, type AutomationState, type Mode } from '../common';
 export default function useAutomation() {
   const [state, setState] = useState<AutomationState>();
   const [loading, setLoading] = useState(false);
+  console.log(state?.history.at(-1));
 
   useEffect(() => {
     invoke<AutomationState>('get_state').then(setState);
