@@ -1,0 +1,77 @@
+name: Bug report
+description: Report a problem with Lux Desktop or the local OAGI server connection.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-checks
+      options:
+        - label: I have searched existing issues.
+          required: true
+        - label: I am using the latest released Lux Desktop build.
+          required: true
+        - label: I included relevant logs/error messages.
+          required: false
+  - type: input
+    id: desktop_version
+    attributes:
+      label: Lux Desktop version
+      description: Find it in Help → About (or the release tag you installed).
+      placeholder: e.g. 0.2.x
+    validations:
+      required: true
+  - type: input
+    id: server_version
+    attributes:
+      label: OAGI server / package version
+      description: Output of `oagi version` or the package version driving the server.
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+    validations:
+      required: true
+  - type: dropdown
+    id: connection
+    attributes:
+      label: How are you connecting?
+      options:
+        - Localhost (127.0.0.1)
+        - Remote/self-hosted server
+        - Cloud/other
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include launch commands, UI actions, and any environment specifics.
+      placeholder: |
+        1. Start server with ...
+        2. Open Lux Desktop and ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and logs
+      description: Paste console logs or screenshots of errors (Socket.IO, 4xx, etc.).
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: network
+    attributes:
+      label: Network/proxy context
+      description: VPN/proxy/firewall info, if relevant.
+
