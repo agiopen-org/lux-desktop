@@ -69,7 +69,7 @@ jobs:
           APP_NAME=$(ls -d *.app | head -1)
           VERSION="${{ github.ref_name }}"
           ZIP_NAME="${APP_NAME%.app}_${VERSION}_universal.app.zip"
-          zip -r "$ZIP_NAME" "$APP_NAME"
+          ditto -c -k --keepParent "$APP_NAME" "$ZIP_NAME"
           echo "zip_path=src-tauri/target/universal-apple-darwin/release/bundle/macos/$ZIP_NAME" >> $GITHUB_OUTPUT
           echo "zip_name=$ZIP_NAME" >> $GITHUB_OUTPUT
 
